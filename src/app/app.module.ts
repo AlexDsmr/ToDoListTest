@@ -7,6 +7,7 @@ import { TodoListPageComponent } from './pages/todo-list-page/todo-list-page.com
 import { TodoTableComponent } from './components/table/todo-table.component';
 import { FilterTaskComponent } from './components/filter-task/filter-task.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     TodoListPageComponent,
     TodoTableComponent,
     FilterTaskComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
