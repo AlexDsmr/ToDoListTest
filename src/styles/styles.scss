@@ -1,5 +1,8 @@
 /* Подключаем шрифты */
-@import "fonts";
+@import 'fonts';
 
 /* Подключаем цвета */
-@import "variables";
+@import 'variables';
+
+/* Сбрасываем стили */
+@import 'reset-styles';
