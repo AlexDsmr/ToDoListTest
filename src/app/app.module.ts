@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TodoListPageComponent } from './pages/todo-list-page/todo-list-page.component';
 import { TodoTableComponent } from './components/table/todo-table.component';
 import { FilterTaskComponent } from './components/filter-task/filter-task.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListPageComponent,
     TodoTableComponent,
-    FilterTaskComponent
+    FilterTaskComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
