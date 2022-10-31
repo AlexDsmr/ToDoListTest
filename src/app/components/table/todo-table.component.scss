@@ -1,7 +1,6 @@
 @import '../styles/styles.scss';
 
 .task-table {
-  font-family: 'Manrope';
   border-collapse: collapse;
   width: 100%;
   max-width: 100%;
@@ -25,12 +24,6 @@
   text-align: start;
   border: none;
   border: 1px solid $row-border-color;
-  font-weight: 400;
-}
-
-.checkbox {
-  height: 24px;
-  width: 24px;
 }
 
 .icons {
@@ -45,19 +38,4 @@
     min-width: 25px;
     padding-right: 5px;
   }
-}
-
-.text-field {
-  display: block;
-  width: 100%;
-  height: calc(2.25rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: $text-color;
-  background-clip: padding-box;
-  border: 1px solid $border-color;
-  border-radius: 0.25rem;
 }
