@@ -18,4 +18,8 @@ export class TasksService {
       .get<Task[]>(this.apiEndpoint + 'tasks')
       .pipe(tap((tasks) => (this.tasks = tasks)));
   }
+
+  public getTasks(): Task[] {
+    return this.tasks;
+  }
 }
