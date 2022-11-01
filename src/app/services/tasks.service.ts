@@ -9,14 +9,21 @@ import { environment } from 'src/environments/environment';
 })
 export class TasksService {
   apiEndpoint = environment.apiEndpoint;
+  prepareUrl = this.apiEndpoint + 'tasks';
   constructor(private http: HttpClient) {}
 
   tasks: Task[] = [];
 
   getAll(): Observable<Task[]> {
-    return this.http
-      .get<Task[]>(this.apiEndpoint + 'tasks')
-      .pipe(tap((tasks) => (this.tasks = tasks)));
+    return this.http.get<Task[]>(this.prepareUrl).pipe(tap((tasks) => (this.tasks = tasks)));
+  }
+
+  createTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.prepareUrl, task).pipe(
+      tap((task) => {
+        this.tasks.push(task);
+      })
+    );
   }
 
   public getTasks(): Task[] {
