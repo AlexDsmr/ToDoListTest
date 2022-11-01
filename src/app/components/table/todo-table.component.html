@@ -18,7 +18,11 @@
       </td>
       <td>
         <label>
-          <input type="checkbox" [checked]="task.isCompleted" />
+          <input
+            type="checkbox"
+            [checked]="task.isCompleted"
+            (change)="changeTaskStatus(task.id, !task.isCompleted)"
+          />
           <span></span>
         </label>
       </td>

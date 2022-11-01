@@ -26,6 +26,13 @@ export class TasksService {
     );
   }
 
+  changeTaskStatus(id: number, newStatus: boolean): Observable<Task> {
+    const body = {
+      isCompleted: newStatus
+    };
+    return this.http.patch<Task>(this.prepareUrl + `/${id}`, body);
+  }
+
   public getTasks(): Task[] {
     return this.tasks;
   }
