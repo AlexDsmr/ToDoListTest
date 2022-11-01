@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'app-todo-list-page',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list-page.component.scss']
 })
 export class TodoListPageComponent implements OnInit {
-  constructor() {}
+  constructor(private taskService: TasksService) {}
 
   ngOnInit(): void {
-    console.log('123');
+    this.taskService.getAll().subscribe((res) => {
+      console.log(res);
+    });
   }
 }

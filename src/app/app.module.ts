@@ -8,6 +8,7 @@ import { TodoTableComponent } from './components/table/todo-table.component';
 import { FilterTaskComponent } from './components/filter-task/filter-task.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ModalComponent } from './components/modal/modal.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
