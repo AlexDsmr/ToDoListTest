@@ -13,7 +13,7 @@
     {
       "id": 3,
       "task": "Покормить кошку",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": 4,

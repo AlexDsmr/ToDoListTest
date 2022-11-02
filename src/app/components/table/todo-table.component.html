@@ -11,28 +11,29 @@
   <tbody>
     <tr *ngFor="let task of tasksProps; trackBy: trackByFn">
       <td>
-        <span *ngIf="!isEditingTask(task.id)">{{ task.task }}</span>
-        <div class="text-field" *ngIf="isEditingTask(task.id)">
-          <input class="text-field__input" [value]="task.task" />
+        <span *ngIf="!isEditingTask(task)">{{ task.task }}</span>
+        <div class="text-field" *ngIf="isEditingTask(task)">
+          <input
+            #taskInput
+            class="text-field__input"
+            [value]="task.task"
+            (input)="updateEditingTask(taskInput.value, task)"
+          />
         </div>
       </td>
       <td>
         <label>
-          <input
-            type="checkbox"
-            [checked]="task.isCompleted"
-            (change)="changeTaskStatus(task.id, !task.isCompleted)"
-          />
+          <input type="checkbox" [checked]="task.isCompleted" (change)="changeTaskStatus(task)" />
           <span></span>
         </label>
       </td>
-      <td class="icons" *ngIf="!isEditingTask(task.id)">
-        <img src="assets/svg/edit.svg" (click)="addToEdit(task.id)" />
+      <td class="icons" *ngIf="!isEditingTask(task)">
+        <img src="assets/svg/edit.svg" (click)="addToEdit(task)" />
         <img src="assets/svg/remove.svg" />
       </td>
-      <td class="icons" *ngIf="isEditingTask(task.id)">
-        <img src="assets/svg/ok.svg" />
-        <img src="assets/svg/cancel.svg" (click)="deleteFromEdit(task.id)" />
+      <td class="icons" *ngIf="isEditingTask(task)">
+        <img src="assets/svg/ok.svg" (click)="acceptEdit(task)" />
+        <img src="assets/svg/cancel.svg" (click)="deleteFromEdit(task)" />
       </td>
     </tr>
   </tbody>
