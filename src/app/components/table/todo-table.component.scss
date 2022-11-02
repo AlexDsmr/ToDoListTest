@@ -33,3 +33,7 @@ cdk-virtual-scroll-viewport {
   height: calc(100vh - 212px);
   width: 100%;
 }
+
+tr:hover {
+  background-color: $hover-color;
+}
