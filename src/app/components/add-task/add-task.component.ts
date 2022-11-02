@@ -27,7 +27,8 @@ export class AddTaskComponent implements OnInit, OnDestroy {
     const task: Task = {
       id: Date.now(),
       task: this.form.value.task as string,
-      isCompleted: false
+      isCompleted: false,
+      completeDate: null
     };
     this.taskService
       .createTask(task)

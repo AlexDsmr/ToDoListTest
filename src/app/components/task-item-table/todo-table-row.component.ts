@@ -35,8 +35,9 @@ export class TodoTableRowComponent implements OnInit, OnDestroy {
 
   changeTaskStatus(): void {
     if (!this.editMode) {
+      const completeDate = !this.taskProps.isCompleted ? Date.now() : null;
       this.taskService
-        .changeTaskStatus(this.taskProps.id, !this.taskProps.isCompleted)
+        .changeTaskStatus(this.taskProps.id, !this.taskProps.isCompleted, completeDate)
         .pipe(take(1), takeUntil(this.destroyed$))
         .subscribe((task) => {
           this.taskProps = task;

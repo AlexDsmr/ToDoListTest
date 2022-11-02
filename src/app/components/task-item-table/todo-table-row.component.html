@@ -1,11 +1,12 @@
 <td *ngIf="!editMode">
-  <span>{{ taskProps.task }}</span>
+  <span [ngClass]="{ lineThrough: taskProps.isCompleted }">{{ taskProps.task }}</span>
 </td>
 <td *ngIf="!editMode">
   <label>
     <input type="checkbox" [checked]="taskProps.isCompleted" (change)="changeTaskStatus()" />
     <span></span>
   </label>
+  <span class="date">{{ taskProps.completeDate | date: 'short' }}</span>
 </td>
 <td class="icons" *ngIf="!editMode">
   <img src="assets/svg/edit.svg" (click)="setEditMode()" />

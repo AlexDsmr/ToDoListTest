@@ -3,17 +3,20 @@
     {
       "id": 1,
       "task": "Выучить Angular",
-      "isCompleted": true
+      "isCompleted": true,
+      "completeDate": 1667423133694
     },
     {
       "id": 2,
       "task": "Выучить Typescript",
-      "isCompleted": true
+      "isCompleted": true,
+      "completeDate": 1667423134288
     },
     {
       "id": 3,
       "task": "Покормить кошку",
-      "isCompleted": true
+      "isCompleted": true,
+      "completeDate": 1667423137077
     },
     {
       "id": 4,
@@ -23,7 +26,8 @@
     {
       "id": 1667339021556,
       "task": "Побалдеть на солнышке",
-      "isCompleted": false
+      "isCompleted": true,
+      "completeDate": 1667423494255
     },
     {
       "id": 1667422019819,
@@ -33,7 +37,8 @@
     {
       "id": 1667422062874,
       "task": "Погладить кота",
-      "isCompleted": true
+      "isCompleted": false,
+      "completeDate": null
     }
   ]
 }
