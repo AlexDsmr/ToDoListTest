@@ -12,7 +12,6 @@ export class ModalComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
 
   constructor(public modalService: ModalService, private taskService: TasksService) {}
-  @Input() title: string;
 
   ngOnInit(): void {}
 
