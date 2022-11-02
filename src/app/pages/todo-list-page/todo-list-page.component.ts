@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Task } from '@interfaces/task.interface';
 import { Subject, take, takeUntil } from 'rxjs';
+import { ModalService } from 'src/app/services/modal.service';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { TasksService } from 'src/app/services/tasks.service';
 })
 export class TodoListPageComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
-  constructor(private taskService: TasksService) {}
+  constructor(private taskService: TasksService, public modalService: ModalService) {}
   ngOnDestroy(): void {
     this.destroyed$.next();
   }

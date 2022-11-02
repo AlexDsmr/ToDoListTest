@@ -8,4 +8,4 @@
   </div>
 </div>
 
-<app-modal *ngIf="false"></app-modal>
+<app-modal *ngIf="modalService.isVisible$ | async"></app-modal>

@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Task } from '@interfaces/task.interface';
 import { Subject, switchMap, take, takeUntil } from 'rxjs';
+import { ModalService } from 'src/app/services/modal.service';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { TasksService } from 'src/app/services/tasks.service';
 })
 export class TodoTableRowComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
-  constructor(private taskService: TasksService) {}
+  constructor(private taskService: TasksService, public modalService: ModalService) {}
 
   @Input() taskProps: Task;
   editMode: boolean = false;
@@ -65,15 +66,16 @@ export class TodoTableRowComponent implements OnInit, OnDestroy {
   }
 
   deleteTask() {
-    this.taskService
-      .deleteTask(this.taskProps.id)
-      .pipe(
-        take(1),
-        takeUntil(this.destroyed$),
-        switchMap(() => {
-          return this.taskService.getAll();
-        })
-      )
-      .subscribe(() => {});
+    this.modalService.open();
+    //this.taskService
+    //  .deleteTask(this.taskProps.id)
+    //  .pipe(
+    //    take(1),
+    //    takeUntil(this.destroyed$),
+    //    switchMap(() => {
+    //      return this.taskService.getAll();
+    //    })
+    //  )
+    //  .subscribe(() => {});
   }
 }
