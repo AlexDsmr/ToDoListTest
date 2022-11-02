@@ -1,0 +1,38 @@
+.btn {
+  width: 220px;
+  min-width: 220px;
+  padding: 0 15px;
+  margin: 0px 15px;
+  border-radius: 4px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+
+  color: $main-color;
+  background-color: $secondary-text-color;
+  border: 2px solid $main-color;
+}
+
+.btn:hover {
+  box-shadow: 0 1px 2px 0 rgba(23, 119, 4, 0.767),
+    0 1px 3px 1px rgb(60, 232, 26, 0.3);
+  color: $secondary-text-color;
+  background-color: $main-color;
+  border: 2px solid $main-color;
+}
+.btn:active {
+  box-shadow: 0 1px 2px 0 rgba(20, 100, 4, 0.644),
+    0 2px 6px 2px rgba(27, 131, 6, 0.3);
+  color: $secondary-text-color;
+  background-color: $main-color;
+  border: 3px solid $main-color;
+}
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(3, 105, 29, 0.753);
+}
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.65;
+}

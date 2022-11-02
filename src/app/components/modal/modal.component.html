@@ -1,0 +1,13 @@
+<div class="background" (click)="modalService.close()"></div>
+
+<div class="window">
+  <div class="description">
+    <h1>Вы действительно хотите удалить эту задачу?</h1>
+    <h2>"{{ modalService.title }}"</h2>
+  </div>
+
+  <div class="buttons">
+    <button class="btn btn__vide" (click)="cancelFn()">Нет</button>
+    <button class="btn btn__vide" (click)="applyFn()">Да</button>
+  </div>
+</div>

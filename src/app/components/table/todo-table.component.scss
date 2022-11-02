@@ -1,0 +1,39 @@
+@import '../styles/styles.scss';
+
+.task-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+}
+.task-table th {
+  padding: 0px 40px;
+  text-align: start;
+  border: none;
+  font-size: 18px;
+  height: 54px;
+  color: $secondary-text-color;
+  background: $main-color;
+  font-weight: 600;
+}
+
+.noData {
+  text-align: center;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  height: calc(100vh - 212px);
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 500;
+  color: $inactive-text-color;
+}
+
+cdk-virtual-scroll-viewport {
+  height: calc(100vh - 212px);
+  width: 100%;
+}
+
+tr:hover {
+  background-color: $hover-color;
+}

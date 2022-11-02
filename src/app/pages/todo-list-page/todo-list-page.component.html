@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="header">
+    <app-filter-task></app-filter-task>
+    <app-add-task></app-add-task>
+  </div>
+  <div class="content">
+    <app-todo-table [tasksProps]="tasks"></app-todo-table>
+  </div>
+</div>
+
+<app-modal *ngIf="modalService.isVisible$ | async"></app-modal>

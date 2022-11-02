@@ -1,0 +1,6 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="text-field">
+    <input class="text-field__input" placeholder="Введите название задачи" formControlName="task" />
+    <button class="btn btn__vide" type="submit" [disabled]="form.invalid">Добавить задачу</button>
+  </div>
+</form>

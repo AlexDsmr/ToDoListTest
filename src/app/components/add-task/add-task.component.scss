@@ -1,0 +1,18 @@
+@import '../styles/styles.scss';
+
+div {
+  display: flex;
+  padding: 34px 0;
+  font-size: 18px;
+  span {
+    padding-bottom: 16px;
+  }
+}
+
+.btn {
+  margin: 0px 50px;
+}
+
+form {
+  display: flex;
+}

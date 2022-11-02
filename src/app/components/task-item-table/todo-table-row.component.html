@@ -1,0 +1,35 @@
+<td *ngIf="!editMode">
+  <span [ngClass]="{ lineThrough: taskProps.isCompleted }">{{ taskProps.task }}</span>
+</td>
+<td *ngIf="!editMode">
+  <label>
+    <input type="checkbox" [checked]="taskProps.isCompleted" (change)="changeTaskStatus()" />
+    <span></span>
+  </label>
+  <span class="date">{{ taskProps.completeDate | date: 'short' }}</span>
+</td>
+<td class="icons" *ngIf="!editMode">
+  <img src="assets/svg/edit.svg" (click)="setEditMode()" />
+  <img src="assets/svg/remove.svg" (click)="deleteTask()" />
+</td>
+
+<td *ngIf="editMode">
+  <div class="text-field">
+    <input
+      #taskInput
+      class="text-field__input"
+      [value]="editingTask.task"
+      (input)="updateEditingTask(taskInput.value)"
+    />
+  </div>
+</td>
+<td *ngIf="editMode">
+  <label>
+    <input type="checkbox" [checked]="taskProps.isCompleted" (change)="changeTaskStatus()" />
+    <span></span>
+  </label>
+</td>
+<td class="icons" *ngIf="editMode">
+  <img src="assets/svg/ok.svg" (click)="acceptEdit()" />
+  <img src="assets/svg/cancel.svg" (click)="cancelEditMode()" />
+</td>

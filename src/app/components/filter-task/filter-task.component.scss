@@ -1,0 +1,11 @@
+@import '../styles/styles.scss';
+
+div {
+  display: flex;
+  flex-direction: column;
+  padding: 34px 40px;
+  font-size: 18px;
+  span {
+    padding-bottom: 16px;
+  }
+}

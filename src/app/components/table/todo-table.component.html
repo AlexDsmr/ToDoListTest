@@ -1,0 +1,28 @@
+<table class="task-table">
+  <col style="width: 60%" />
+  <col style="width: 30%" />
+  <col style="width: 180px" />
+  <thead>
+    <tr>
+      <th>Задача</th>
+      <th colspan="2" class="complete-col">Выполнено</th>
+    </tr>
+  </thead>
+</table>
+<cdk-virtual-scroll-viewport itemSize="10" *ngIf="tasksProps.length > 0">
+  <table class="task-table">
+    <col style="width: 60%" />
+    <col style="width: 30%" />
+    <col style="width: 180px" />
+    <tbody>
+      <tr
+        *cdkVirtualFor="let task of tasksProps; trackBy: trackByFn"
+        app-todo-table-row
+        [taskProps]="task"
+      ></tr>
+    </tbody>
+  </table>
+</cdk-virtual-scroll-viewport>
+<div *ngIf="tasksProps.length === 0" class="noData">
+  <span>Нет данных</span>
+</div>
