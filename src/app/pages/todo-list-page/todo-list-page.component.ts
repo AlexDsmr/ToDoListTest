@@ -15,8 +15,6 @@ export class TodoListPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.taskService.getAll().subscribe((res) => {
-      console.log(res);
-    });
+    this.taskService.getAll().subscribe(() => {});
   }
 }

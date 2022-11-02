@@ -30,6 +30,10 @@ export class TasksService {
     return this.http.put<Task>(this.prepareUrl + `/${task.id}`, task);
   }
 
+  deleteTask(taskId: number): Observable<void> {
+    return this.http.delete<void>(this.prepareUrl + `/${taskId}`);
+  }
+
   changeTaskStatus(id: number, newStatus: boolean): Observable<Task> {
     const body = {
       isCompleted: newStatus

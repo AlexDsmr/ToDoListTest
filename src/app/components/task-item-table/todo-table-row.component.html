@@ -9,7 +9,7 @@
 </td>
 <td class="icons" *ngIf="!editMode">
   <img src="assets/svg/edit.svg" (click)="setEditMode()" />
-  <img src="assets/svg/remove.svg" />
+  <img src="assets/svg/remove.svg" (click)="deleteTask()" />
 </td>
 
 <td *ngIf="editMode">

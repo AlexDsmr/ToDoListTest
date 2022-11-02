@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Task } from '@interfaces/task.interface';
-import { Subject, take, takeUntil } from 'rxjs';
+import { Subject, switchMap, take, takeUntil } from 'rxjs';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
@@ -17,9 +17,7 @@ export class TodoTableRowComponent implements OnInit, OnDestroy {
   editMode: boolean = false;
   editingTask: Task;
 
-  ngOnInit(): void {
-    console.log(this.taskProps);
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.destroyed$.next();
@@ -66,7 +64,16 @@ export class TodoTableRowComponent implements OnInit, OnDestroy {
       });
   }
 
-  trackByFn(index, item) {
-    return item.id;
+  deleteTask() {
+    this.taskService
+      .deleteTask(this.taskProps.id)
+      .pipe(
+        take(1),
+        takeUntil(this.destroyed$),
+        switchMap(() => {
+          return this.taskService.getAll();
+        })
+      )
+      .subscribe(() => {});
   }
 }
