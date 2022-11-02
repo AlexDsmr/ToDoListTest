@@ -66,16 +66,6 @@ export class TodoTableRowComponent implements OnInit, OnDestroy {
   }
 
   deleteTask() {
-    this.modalService.open();
-    //this.taskService
-    //  .deleteTask(this.taskProps.id)
-    //  .pipe(
-    //    take(1),
-    //    takeUntil(this.destroyed$),
-    //    switchMap(() => {
-    //      return this.taskService.getAll();
-    //    })
-    //  )
-    //  .subscribe(() => {});
+    this.modalService.open(this.taskProps.id);
   }
 }

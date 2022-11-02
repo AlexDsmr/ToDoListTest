@@ -6,12 +6,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ModalService {
   isVisible$ = new BehaviorSubject<boolean>(false);
+  taskId: number | undefined = undefined;
 
-  open() {
+  open(taskId: number) {
     this.isVisible$.next(true);
+    this.taskId = taskId;
   }
 
   close() {
     this.isVisible$.next(false);
+    this.taskId = undefined;
   }
 }
