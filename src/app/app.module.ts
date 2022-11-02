@@ -10,6 +10,7 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoTableRowComponent } from './components/task-item-table/todo-table-row.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TodoTableComponent,
     FilterTaskComponent,
     AddTaskComponent,
-    ModalComponent
+    ModalComponent,
+    TodoTableRowComponent
   ],
   imports: [
     BrowserModule,

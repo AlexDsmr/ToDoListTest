@@ -26,6 +26,10 @@ export class TasksService {
     );
   }
 
+  updateTask(task: Task): Observable<Task> {
+    return this.http.put<Task>(this.prepareUrl + `/${task.id}`, task);
+  }
+
   changeTaskStatus(id: number, newStatus: boolean): Observable<Task> {
     const body = {
       isCompleted: newStatus
