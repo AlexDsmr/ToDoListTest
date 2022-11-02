@@ -32,6 +32,8 @@ export class AddTaskComponent implements OnInit, OnDestroy {
     this.taskService
       .createTask(task)
       .pipe(take(1), takeUntil(this.destroyed$))
-      .subscribe(() => {});
+      .subscribe(() => {
+        this.form.controls.task.setValue('');
+      });
   }
 }
