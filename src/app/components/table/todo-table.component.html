@@ -8,7 +8,7 @@
       <th colspan="2" class="complete-col">Выполнено</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="tasksProps.length > 0">
     <tr
       *ngFor="let task of tasksProps; trackBy: trackByFn"
       app-todo-table-row
@@ -16,3 +16,7 @@
     ></tr>
   </tbody>
 </table>
+
+<div *ngIf="tasksProps.length === 0" class="noData">
+  <span>Нет данных</span>
+</div>

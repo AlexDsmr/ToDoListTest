@@ -15,3 +15,16 @@
   background: $main-color;
   font-weight: 600;
 }
+
+.noData {
+  text-align: center;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 500;
+  color: $inactive-text-color;
+}

@@ -1,4 +1,10 @@
 <div class="text-field">
   <span> Фильтр: </span>
-  <input class="text-field__input" placeholder="Поиск по задаче" />
+  <input
+    #filterInput
+    class="text-field__input"
+    placeholder="Поиск по задаче"
+    [value]="filterService.filter"
+    (input)="onInputChange(filterInput.value)"
+  />
 </div>
