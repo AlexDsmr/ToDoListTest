@@ -11,6 +11,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoTableRowComponent } from './components/task-item-table/todo-table-row.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TodoTableRowComponent } from './components/task-item-table/todo-table-r
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

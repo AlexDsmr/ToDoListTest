@@ -53,3 +53,15 @@ label span {
   font-size: 23px;
   color: green;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 6px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $scroll-color;
+  border-radius: 2px;
+}
